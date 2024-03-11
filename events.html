@@ -22,16 +22,21 @@
             console.log(e.target.id);
             // --this.state.age
             // console.log(this.state.age);
-            this.setState({
-                age: --this.state.age
-            })
+            switch (e.target.id) {
+                case "dec_btn": 
+                    this.setState({
+                    age: --this.state.age
+                    })
+                    break;
+            }
+
         }
         render(){
           return(
             <div className="app-content">
               <h1>Hello World!!</h1>
               <p>My name is: {this.state.name} and I am {this.state.age}</p>
-              <button onClick={this.handleclick} id="btn1">Age - 1</button>
+              <button onClick={this.handleclick} id="dec_btn">Age - 1</button>
             </div>
           )
         }
